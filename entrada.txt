@@ -1,0 +1,57 @@
+START
+INIT
+_moveForward
+SET_SPEED = 10
+increaseSpeed
+TURN_LEFT
+moveTo
+rotateAngle
+WAIT
+
+IF condition THEN
+    sensor_1
+    READ_SENSOR
+    logEntry
+ELSE
+    deactivateSensor_01
+    LOG "Sensor inactivo"
+END
+
+FOR counter = 1 TO 10 DO
+    MOVE_BACKWARD
+    TURN_RIGHT
+    IF counter > 5 THEN
+        PAUSE
+    END
+    RESUME
+END
+
+fileUploader
+DELETE_FILE
+COPY_FILE
+RENAME_FILE
+SAVE_FILE
+
+WHILE lowBatteryStatus DO
+    CHECK_BATTERY
+    chargeBattery_99
+END
+
+alarmActivator
+DEACTIVATE_ALARM
+TOGGLE_LIGHT
+
+BREAK
+CONTINUE
+
+SHUTDOWN
+systemReboot
+RESET
+CALIBRATE
+
+doorControl
+CLOSE_DOOR
+LOCK
+unlock_system
+
+PRINT "Finalizando"
